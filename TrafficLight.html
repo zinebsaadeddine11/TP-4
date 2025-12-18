@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feu de circulation</title>
+<style>
+    body {
+      
+      background: #cf777723;
+      font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    }
+  .traffic-light {
+    width: 100px;
+    background: #333;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 50px auto;
+    text-align: center;
+  }
+  .light {
+    width: 60px;
+    height: 60px;
+    background: #555;
+    margin: 15px auto;
+    border-radius: 50%;
+    transition: background 0.5s;
+  }
+  .red.active { background: red; }
+  .yellow.active { background: yellow; }
+  .green.active { background: green; }
+
+  button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+
+<div class="traffic-light">
+  <div class="light red"></div>
+  <div class="light yellow"></div>
+  <div class="light green"></div>
+</div>
+
+<button id="startBtn">Start</button>
+
+<script src="TrafficLight.js"></script>
+</body>
+</html>

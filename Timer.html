@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer</title>
+
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #cf7777;
+      font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    }
+
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: rgb(37, 109, 109);
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    .btnsection {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    button {
+      flex: 1;
+      margin: 0 5px;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    #startBtn { background: #4caf50; color: white; }
+    #pauseBtn { background: #ff9800; color: white; }
+    #endBtn   { background: #f44336; color: white; }
+
+    #display {
+      font-size: 32px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Timer</h1>
+
+    <input type="number" id="inputTime" placeholder="Temps en secondes">
+
+    <div class="btnsection">
+      <button id="startBtn">Start</button>
+      <button id="pauseBtn">Pause</button>
+      <button id="endBtn">End</button>
+    </div>
+
+    <p id="display">0</p>
+  </div>
+
+  <script src="Timer.js"></script>
+</body>
+</html>
