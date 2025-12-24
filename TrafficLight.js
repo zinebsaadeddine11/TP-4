@@ -2,7 +2,7 @@
   const yellow = document.querySelector('.yellow');
   const green = document.querySelector('.green');
   const startBtn = document.getElementById('startBtn');
-
+  const stopBtn=document.getElementById('stopBtn');
   let interval;
   let state = 0;
 
@@ -23,4 +23,11 @@
       changeLight(); 
       interval = setInterval(changeLight, 2000);
     }
+  
   });
+stopBtn.addEventListener('click',()=>
+{
+  clearInterval(interval);
+  interval=null;
+  classList.remove("active");
+});

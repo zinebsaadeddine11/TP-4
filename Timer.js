@@ -1,17 +1,16 @@
 const timeInput = document.getElementById("inputTime");
 const startBTN = document.getElementById("startBtn");
 const pauseBTN = document.getElementById("pauseBtn");
-const endBTN = document.getElementById("endBtn");
+const resumeBTN = document.getElementById("resumeBtn");
+const resetBTN = document.getElementById("resetBtn");
 const display = document.getElementById("display");
 
 let interval = null;
 let t = 0;
 
-startBTN.addEventListener("click", () => {
-  if (interval) return;
-
-  t = Number(timeInput.value);
-  display.textContent = t;
+function startTimer() {
+  if (interval) return; 
+  if (t <= 0) return;
 
   interval = setInterval(() => {
     if (t > 0) {
@@ -23,4 +22,33 @@ startBTN.addEventListener("click", () => {
       display.textContent = "Time over";
     }
   }, 1000);
+}
+
+startBTN.addEventListener("click", () => {
+  t = parseInt(timeInput.value);
+  if (t <= 0) return;
+  display.textContent = t;
+  startTimer();
+});
+
+
+pauseBTN.addEventListener("click", () => {
+  clearInterval(interval);
+  interval = null;
+});
+
+
+resumeBTN.addEventListener("click", () => {
+  if (!interval && t > 0) {
+    startTimer();
+  }
+});
+
+
+resetBtn.addEventListener("click", () => {
+  clearInterval(interval);
+  interval = null;
+  t = 0;
+  display.textContent = "0";
+  timeInput.value = 0;
 });
